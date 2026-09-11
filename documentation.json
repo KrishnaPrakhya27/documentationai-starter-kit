@@ -1,151 +1,259 @@
 {
-  "name": "Starter Kit",
-  "colors": {
-    "light": {
-      "brand": "#F97316"
-    },
-    "dark": {
-      "brand": "#FDBA74"
-    }
-  },
+  "name": "Documentation",
+  "initialRoute": "demo-docs",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Documentation",
-        "icon": "book",
-        "groups": [
+        "group": "Home",
+        "pages": [
           {
-            "group": "Start Here",
-            "icon": "rocket",
+            "title": "Developer Platform",
+            "path": "demo-docs"
+          }
+        ]
+      },
+      {
+        "group": "Documentation",
+        "pages": [
+          {
+            "title": "Welcome",
+            "path": "demo-docs/documentation"
+          },
+          {
+            "group": "Getting Started",
             "pages": [
               {
-                "title": "Introduction",
-                "path": "introduction",
-                "icon": "home"
+                "title": "Getting started",
+                "path": "demo-docs/documentation/getting-started/getting-started"
               },
               {
                 "title": "Quickstart",
-                "path": "quickstart",
-                "icon": "zap"
+                "path": "demo-docs/documentation/getting-started/quickstart"
               },
               {
-                "title": "Components",
-                "path": "components",
-                "icon": "code"
+                "title": "Your first project",
+                "path": "demo-docs/documentation/getting-started/your-first-project"
               }
             ]
           },
           {
-            "group": "Components",
-            "icon": "layers",
+            "group": "Core concepts",
             "pages": [
               {
-                "title": "Images",
-                "path": "components/images",
-                "icon": "image"
+                "title": "Core concepts",
+                "path": "demo-docs/documentation/core-concepts/core-concepts"
               },
               {
-                "title": "Cards",
-                "path": "components/cards",
-                "icon": "square"
+                "title": "Workspaces and projects",
+                "path": "demo-docs/documentation/core-concepts/workspaces-and-projects"
               },
               {
-                "title": "Code",
-                "path": "components/code",
-                "icon": "code"
-              },
-              {
-                "title": "Callouts",
-                "path": "components/callouts",
-                "icon": "message-square"
-              },
-              {
-                "title": "Steps",
-                "path": "components/steps",
-                "icon": "list-ordered"
-              },
-              {
-                "title": "Tabs",
-                "path": "components/tabs",
-                "icon": "columns"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "icon": "code",
-        "groups": [
-          {
-            "group": "Overview",
-            "icon": "file-text",
-            "pages": [
-              {
-                "title": "Authentication",
-                "path": "authentication",
-                "icon": "lock"
-              }
-            ]
-          },
-          {
-            "group": "Sample Endpoints",
-            "openapi": "openapi.yaml"
-          }
-        ]
-      },
-      {
-        "tab": "Help Center",
-        "icon": "help-circle",
-        "pages": [
-          {
-            "title": "Help Center",
-            "path": "help-center",
-            "icon": "home"
-          },
-          {
-            "group": "FAQs",
-            "icon": "help-circle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Documentation Source",
-                "path": "help-center/faq/getting-started"
-              }
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "icon": "alert-triangle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Page Missing in Sidebar",
-                "path": "help-center/troubleshooting/install-error"
+                "title": "Permissions",
+                "path": "demo-docs/documentation/core-concepts/permissions"
               }
             ]
           },
           {
             "group": "Guides",
-            "icon": "book-open",
-            "expandable": false,
             "pages": [
               {
-                "title": "Create Your First Page",
-                "path": "help-center/guides/setup-project"
+                "title": "Guides",
+                "path": "demo-docs/documentation/guides/guides"
+              },
+              {
+                "title": "Custom domains",
+                "path": "demo-docs/documentation/guides/custom-domains"
+              },
+              {
+                "title": "Automations",
+                "path": "demo-docs/documentation/guides/automations"
+              }
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              {
+                "title": "Reference",
+                "path": "demo-docs/documentation/reference/reference"
+              },
+              {
+                "title": "Configuration",
+                "path": "demo-docs/documentation/reference/configuration"
+              },
+              {
+                "title": "Glossary",
+                "path": "demo-docs/documentation/reference/glossary"
               }
             ]
           }
         ]
       },
       {
-        "tab": "Changelog",
-        "icon": "clock",
+        "group": "API Reference",
+        "pages": [
+          {
+            "title": "Welcome to the GitBook Petstore API",
+            "path": "demo-docs/api-reference"
+          },
+          {
+            "title": "Servers & Authentication",
+            "path": "demo-docs/api-reference/welcome-to-the-gitbook-petstore-api/servers-and-authentication"
+          },
+          {
+            "title": "Getting started",
+            "path": "demo-docs/api-reference/welcome-to-the-gitbook-petstore-api/getting-started"
+          },
+          {
+            "title": "Error responses",
+            "path": "demo-docs/api-reference/welcome-to-the-gitbook-petstore-api/error-responses"
+          },
+          {
+            "group": "Store",
+            "pages": [
+              {
+                "title": "Orders",
+                "path": "demo-docs/api-reference/store/orders"
+              },
+              {
+                "title": "Inventory",
+                "path": "demo-docs/api-reference/store/inventory"
+              }
+            ]
+          },
+          {
+            "group": "Pets",
+            "pages": [
+              {
+                "title": "Animals",
+                "path": "demo-docs/api-reference/pets/animals"
+              },
+              {
+                "title": "Categories",
+                "path": "demo-docs/api-reference/pets/categories"
+              }
+            ]
+          },
+          {
+            "title": "Models",
+            "path": "demo-docs/api-reference/models"
+          }
+        ]
+      },
+      {
+        "group": "Changelog",
         "pages": [
           {
             "title": "Changelog",
-            "path": "changelog",
-            "icon": "history"
+            "path": "demo-docs/changelog"
+          },
+          {
+            "group": "2026",
+            "pages": [
+              {
+                "title": "Product update",
+                "path": "demo-docs/changelog/2026/product-update"
+              },
+              {
+                "title": "Product update",
+                "path": "demo-docs/changelog/2026/product-update-1"
+              }
+            ]
+          },
+          {
+            "group": "2025",
+            "pages": [
+              {
+                "title": "Product update",
+                "path": "demo-docs/changelog/2025/product-update"
+              },
+              {
+                "title": "Product update",
+                "path": "demo-docs/changelog/2025/product-update-1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Help Center",
+        "pages": [
+          {
+            "title": "Help Center",
+            "path": "demo-docs/help-center"
+          },
+          {
+            "group": "Getting started",
+            "pages": [
+              {
+                "title": "Getting started checklist",
+                "path": "demo-docs/help-center/getting-started/getting-started-checklist"
+              },
+              {
+                "title": "What's the difference between a workspace and a project?",
+                "path": "demo-docs/help-center/getting-started/whats-the-difference-between-a-workspace-and-a-project"
+              },
+              {
+                "title": "Setting up a custom domain",
+                "path": "demo-docs/help-center/getting-started/setting-up-a-custom-domain"
+              }
+            ]
+          },
+          {
+            "group": "Plans and billing",
+            "pages": [
+              {
+                "title": "How do I change my plan?",
+                "path": "demo-docs/help-center/plans-billing/how-do-i-change-my-plan"
+              },
+              {
+                "title": "Billing FAQ",
+                "path": "demo-docs/help-center/plans-billing/billing-faq"
+              }
+            ]
+          },
+          {
+            "group": "Admin",
+            "pages": [
+              {
+                "title": "Inviting team members to your workspace",
+                "path": "demo-docs/help-center/admin/inviting-team-members-to-your-workspace"
+              },
+              {
+                "title": "SSO configuration guide",
+                "path": "demo-docs/help-center/admin/sso-configuration-guide"
+              },
+              {
+                "title": "Managing API keys",
+                "path": "demo-docs/help-center/admin/managing-api-keys"
+              }
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              {
+                "title": "Connecting a third-party app",
+                "path": "demo-docs/help-center/integrations/connecting-a-third-party-app"
+              },
+              {
+                "title": "Why isn't my integration syncing?",
+                "path": "demo-docs/help-center/integrations/why-isnt-my-integration-syncing"
+              },
+              {
+                "title": "API rate limits and quotas",
+                "path": "demo-docs/help-center/integrations/api-rate-limits-and-quotas"
+              }
+            ]
+          },
+          {
+            "group": "Community",
+            "pages": [
+              {
+                "title": "Contributing to the platform",
+                "path": "demo-docs/help-center/community/contributing-to-the-platform"
+              }
+            ]
           }
         ]
       }
