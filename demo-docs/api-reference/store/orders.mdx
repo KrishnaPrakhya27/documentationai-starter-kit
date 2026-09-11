@@ -1,0 +1,24 @@
+---
+title: Orders
+description: Place and manage customer orders.
+---
+
+## List orders
+
+> Returns all orders placed in the store. Does not currently support filtering or pagination.
+> 
+> <Callout kind="info">
+>   Filtering and pagination are planned for v2. Subscribe to the [changelog](https://petstore.example.com/changelog) for updates.
+> </Callout>
+
+```json
+{"openapi":"3.0.3","info":{"title":"GitBook Petstore API","version":"1.0.0"},"tags":[{"name":"orders"}],"servers":[{"url":"https://petstore.example.com/v1","description":"Production"},{"url":"https://staging.petstore.example.com/v1","description":"Staging"}],"security":[{"bearerAuth":[]}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","description":"Pass your API key as a Bearer token in the `Authorization` header."}},"schemas":{"Order":{"type":"object","properties":{"id":{"type":"integer","format":"int64","description":"Unique order identifier."},"petId":{"type":"integer","format":"int64","description":"The ID of the animal in this order."},"quantity":{"type":"integer","description":"Number of units ordered."},"shipDate":{"type":"string","format":"date-time","description":"Expected or actual ship date in ISO 8601 format."},"complete":{"type":"boolean","description":"Whether the order has been fulfilled."}}},"Error":{"type":"object","required":["code","message","status"],"properties":{"code":{"type":"string","description":"A machine-readable error code."},"message":{"type":"string","description":"A human-readable description of the error."},"status":{"type":"integer","description":"The HTTP status code."}}}},"responses":{"Unauthorized":{"description":"Missing or invalid API key.","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}}}},"paths":{"/store/orders":{"get":{"summary":"List orders","description":"Returns all orders placed in the store. Does not currently support filtering or pagination.\n\n{% hint style=\"info\" %}\nFiltering and pagination are planned for v2. Subscribe to the [changelog](https://petstore.example.com/changelog) for updates.\n{% endhint %}\n","tags":["orders"],"operationId":"listOrders","responses":{"200":{"description":"An array of orders.","content":{"application/json":{"schema":{"type":"array","items":{"$ref":"#/components/schemas/Order"}}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}}}}
+```
+
+## Cancel an order
+
+> Cancels an order by ID. Only orders with a status of `pending` can be cancelled — orders that have already shipped cannot be reversed.
+
+```json
+{"openapi":"3.0.3","info":{"title":"GitBook Petstore API","version":"1.0.0"},"tags":[{"name":"orders"}],"servers":[{"url":"https://petstore.example.com/v1","description":"Production"},{"url":"https://staging.petstore.example.com/v1","description":"Staging"}],"security":[{"bearerAuth":[]}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","description":"Pass your API key as a Bearer token in the `Authorization` header."}},"responses":{"Unauthorized":{"description":"Missing or invalid API key.","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"NotFound":{"description":"The requested resource could not be found.","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}}},"schemas":{"Error":{"type":"object","required":["code","message","status"],"properties":{"code":{"type":"string","description":"A machine-readable error code."},"message":{"type":"string","description":"A human-readable description of the error."},"status":{"type":"integer","description":"The HTTP status code."}}}}},"paths":{"/store/orders/{orderId}":{"delete":{"summary":"Cancel an order","description":"Cancels an order by ID. Only orders with a status of `pending` can be cancelled — orders that have already shipped cannot be reversed.","tags":["orders"],"operationId":"cancelOrder","parameters":[{"name":"orderId","in":"path","required":true,"description":"The ID of the order to cancel.","schema":{"type":"integer","format":"int64"}}],"responses":{"204":{"description":"Order cancelled successfully."},"401":{"$ref":"#/components/responses/Unauthorized"},"404":{"$ref":"#/components/responses/NotFound"},"409":{"description":"Order cannot be cancelled — it has already shipped."}}}}}}
+```
